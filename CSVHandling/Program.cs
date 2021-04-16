@@ -6,22 +6,37 @@ namespace CSVHandling
     {
         static void Main(string[] args)
         {
-            
+
             System.Net.WebClient wc = new System.Net.WebClient();
-            string csv = wc.DownloadString("https://bit.ly/2tE4CB0");
+            string csv = wc.DownloadString("https://gist.githubusercontent.com/armgilles/194bcff35001e7eb53a2a8b441e8b2c6/raw/92200bc0a673d5ce2110aaad4544ed6c4010f687/pokemon.csv");
 
             string[] splitted = csv.Split('\n');
 
-            for (int i = 1; i < splitted.Length; i++)
+            Pokemon[] pokemons = new Pokemon[splitted.Length - 2];
+
+
+
+
+            for (int i = 1; i < splitted.Length - 1; i++)
             {
                 string[] lijnsplit = splitted[i].Split(',');
-                Console.WriteLine("Data 1=" + lijnsplit[0]);
-                Console.WriteLine("Data 2=" + lijnsplit[1]);
+
+                pokemons[i - 1] = LoadPokemon(lijnsplit);
+
+                //Console.WriteLine($"{pokemons[i-1].PokedexNumber}\t{pokemons[i-1].Name}");
             }
 
-            Console.WriteLine("Hello World!");
-            CsvWriter.writeCsvNoStreamWriter();
-            CsvWriter.writeCsvStreamWriter();
+
+            CsvWriter.writeCsvStreamWriter(pokemons);
+        }
+
+        static Pokemon LoadPokemon(string[] lijnsplit)
+        {
+            Pokemon pokemon = new Pokemon();
+
+            pokemon.StelIn(Convert.ToInt32(lijnsplit[0]), lijnsplit[1], lijnsplit[2], lijnsplit[3], Convert.ToInt32(lijnsplit[5]), Convert.ToInt32(lijnsplit[6]), Convert.ToInt32(lijnsplit[7]), Convert.ToInt32(lijnsplit[8]), Convert.ToInt32(lijnsplit[9]), Convert.ToInt32(lijnsplit[10]), Convert.ToInt32(lijnsplit[11]), Convert.ToBoolean(lijnsplit[12]));
+
+            return pokemon;
         }
     }
 }
