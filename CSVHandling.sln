@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVHandling", "CSVHandling\CSVHandling.csproj", "{382B1911-8944-4A5C-906C-0B6879B217BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{382B1911-8944-4A5C-906C-0B6879B217BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382B1911-8944-4A5C-906C-0B6879B217BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382B1911-8944-4A5C-906C-0B6879B217BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382B1911-8944-4A5C-906C-0B6879B217BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57D7D00D-7960-4A12-B4F9-E43CCD8D9CA6}
+	EndGlobalSection
+EndGlobal
